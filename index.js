@@ -1,30 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
-import MyButton from './MyButton';
-import {HelloMe} from './HelloMe';
+import MyButton from './App1/MyButton';
+import Display from './App1/Display';
 import './style.css';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React Playground'
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <Hello name={this.state.name} />
-        <MyButton></MyButton>
-        <HelloMe></HelloMe>
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
-    );
-  }
+function App() {
+  const [counter, setCounter]=useState(0);
+  return (
+    <div>
+      <MyButton counter={()=>setCounter(counter+1)}></MyButton>
+      <Display message={counter} ></Display>
+    </div>
+  );
 }
 
 render(<App />, document.getElementById('root'));
