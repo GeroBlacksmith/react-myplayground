@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-export default (props)=>{
+export function MyButton(props){
+
   return (
-    <button onClick={props.counter}>
+    <button onClick={props.onClickFunction}>
       +1
     </button>
-    )
+  )
+
 }

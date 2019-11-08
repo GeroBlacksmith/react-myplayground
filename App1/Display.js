@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-export default (props)=>{
+export function Display(props){
  
   return (
-      <div>{props.message}</div>
-    )
+      <div className="displayCounter">{props.message}</div>
+  )
+
 }
