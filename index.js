@@ -7,11 +7,12 @@ import './style.css';
 function App() {
 
   const [counter, setCounter]=useState(0);
-  const incrementCounter=  ()=>setCounter(counter+1);
+  const incrementCounter=  (incrementValue)=>setCounter(counter + incrementValue);
 
   return (
     <div className="container">
-      <MyButton onClickFunction={incrementCounter}></MyButton>
+      <MyButton onClickFunction={incrementCounter} increment={5}> </MyButton>
+      <MyButton onClickFunction={incrementCounter} increment={3}> </MyButton>
       <Display message={counter} ></Display>
     </div>
   );
